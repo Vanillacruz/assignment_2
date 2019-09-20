@@ -28,6 +28,7 @@ public class BMI_Calculator {
 		choice = scnr.nextInt();
 		System.out.print("\n");
 
+		//Ensures user picks a valid choice
 		while ((choice != 1) && (choice != 2)) {
 			System.out.println("Sorry, that was not a valid choice. \nPlease enter again:");
 			System.out.println("Enter 1 for measurement in the imperial system (pounds & inches).");
