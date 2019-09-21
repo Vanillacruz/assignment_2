@@ -1,6 +1,6 @@
 /*	
  	Daniela Cruz Falquez
-	Programming Assignment 2- Problem 1
+	Programming Assignment 2- Problem 1a
 	09/18/2019
 */
 
@@ -45,15 +45,22 @@ public class Encrypt {
 		hundredsPlace = onesPlace;
 		onesPlace = tempDigit;
 
-		//Puts all the digits together to form the new encrypted 4 digit integer
+		// Puts all the digits together to form the new encrypted 4 digit integer
 		encrypted = (1000 * thousandsPlace) + (100 * hundredsPlace) + (10 * tensPlace) + onesPlace;
 
-		//If the thousandth place of the encrypted number is 0, it won't print, so this takes care of properly outputting it
+		// Outputs the encrypted number with leading zeros, if it has any.
 		if (encrypted < 1000) {
-			System.out.println(input + " encrypted is 0" + encrypted);
-		} 
-		else {
-			System.out.println(input + " encrypted is " + encrypted);
+			if (encrypted == 0) {
+				System.out.println("Your number encrypted is 0000");
+			} else if (encrypted < 10) {
+				System.out.println("Your number encrypted is 000" + encrypted);
+			} else if (encrypted < 100) {
+				System.out.println("Your number encrypted is 00" + encrypted);
+			} else {
+				System.out.println("Your number encrypted is 0" + encrypted);
+			}
+		} else {
+			System.out.println("Your number encrypted is " + encrypted);
 		}
 
 	}
